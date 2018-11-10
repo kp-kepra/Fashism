@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import './styles.sass';
 
-var img;
+let img;
 
 class ItemPage extends Component {
   constructor(props, context) {
     super(props, context);
 
     img = window.location.href.replace('item/', '') + '.jpg';
-    console.log(img);
 
     this.importAll = this.importAll.bind(this);
   }
 
-  importAll(r) {
-    return r.keys().map(r);
-  }
-
+  
   componentDidMount() {
     document.body.scrollTop = 0;
     document.querySelector('.menu').classList.remove('open');
+  }
+  
+  importAll(r) {
+    return r.keys().map(r);
   }
 
   render() {    
@@ -45,9 +44,7 @@ class ItemPage extends Component {
           <div className="itemInfoWrapper">
             <span style={{width: '100%'}}>Popular Sites</span>
             { array.map(image =>
-              <div className="itemImgSmallWrapper" onClick={() => {
-                console.log(image);
-              }} >
+              <div className="itemImgSmallWrapper" key={image}>
               <img key={image} src={image} />
               </div>
             )}

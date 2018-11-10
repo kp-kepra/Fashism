@@ -95,23 +95,6 @@ class Home extends Component {
                 }}>LUXURY BAGS</button>
             </div>
         </main>
-    //   <main className="main">
-    //     { array.map(image =>
-    //       <div className="content" onClick={() => {
-    //         var addr = '/item/' + image.replace('http://localhost:8080/', '').replace('.jpg', '');
-    //         browserHistory.push(addr);
-    //         console.log(image);
-    //       }} >
-    //         <div style={{height: "250px"}}>
-    //           <img key={image} src={image} alt="" />
-    //         </div>
-    //         <span>
-    //         { image.replace('http://localhost:8080/', '').replace('.jpg', '').split('_').join(' ')
-    //                .replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) }
-    //         </span>
-    //       </div>
-    //     )}
-    //   </main>
     );
   }
 }

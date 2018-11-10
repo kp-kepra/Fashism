@@ -3,10 +3,6 @@ import { Link } from 'react-router';
 
 import './styles.sass';
 
-var full;
-var rank;
-var category;
-
 class Header extends Component {
 
   constructor(props) {
@@ -15,7 +11,6 @@ class Header extends Component {
   }
 
   componentWillMount() {
-    full = window.location.href.replace('http://localhost:8080/', '');
     this.previousWidth = 0;
     this.menuButton = (
       <button className="menuBtn"

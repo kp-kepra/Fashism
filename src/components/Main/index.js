@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import './styles.sass';
-import { Link } from 'react-router';
-import Item from '../Item/index';
-import { browserHistory } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import csv_male from './../../assets/images/male_res.tsv';
 import csv_female from './../../assets/images/female_res.tsv';
 
-var full;
-var rank;
-var category;
-var csv;
-var ranking;
+let full;
+let rank;
+let category;
+let csv;
+let ranking;
 
 class Homepage extends Component {
   constructor(props, context) {
@@ -19,8 +17,6 @@ class Homepage extends Component {
     rank     = full.slice(0, full.indexOf("/"));
     category = full.split("/").pop();
     ranking  = (rank === 'top' ? 'Top 50' : 'General');
-
-    console.log(csv_female);
 
     this.importAll = this.importAll.bind(this);
     this.onButton = this.onButton.bind(this);
@@ -36,7 +32,7 @@ class Homepage extends Component {
   }
 
   onButton(key) {
-    var addr = '/item/' + key;
+    const addr = '/item/' + key;
     browserHistory.push(addr);
   }
 
@@ -71,8 +67,6 @@ class Homepage extends Component {
       }
     } else array = this.importAll(stuff);
 
-    console.log(array);
-
     return (
       <main className="main">
         <span className="subtitle">{category} - {ranking}</span>
@@ -87,13 +81,12 @@ class Homepage extends Component {
         </Link>
         </div>
         { array.map(image =>
-            <div className="content" onClick={() => {
+            <div className="content" key={image} onClick={() => {
               var addr = '/item/' + image.replace('http://localhost:8080/', '').replace('.jpg', '');
               browserHistory.push(addr);
-              console.log(image);
             }} >
             <div style={{height: "250px"}}>
-              <img class={({rank} == 'top' ? 'top50image' : '')} key={image} src={image} alt="" />
+              <img className={({rank} == 'top' ? 'top50image' : '')} key={image} src={image} alt="" />
             </div>
             <span>
             { image.replace('http://localhost:8080/', '').replace('.jpg', '').split('_').join(' ')
