@@ -3,6 +3,8 @@
 Frontend repository for latest fashion trends based on pop-stars.
 The fashion ranking is made in Caffe.
 
+![alt text](https://github.com/KP-Kepra/Fashism/blob/master/page.png)
+
 ## Features
 * Uses Caffe and PyFaster RCNN to compute the rankings of latest fashion trends
 * Displays the rankings in related fashion images on the Fashism Website
